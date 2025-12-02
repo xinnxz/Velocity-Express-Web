@@ -1,0 +1,1 @@
+Velocity Express is a modern web-based courier and delivery management system designed to streamline the entire shipment lifecycle for small to medium logistics operations. The platform focuses on clarity, speed, and reliability, ensuring that both customers and administrators can manage deliveries without unnecessary complexity
