@@ -1,0 +1,17 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import LocationPicker from '@/components/pilih-lokasi-pesanan/LocationPicker.tsx'
+---
+
+<BaseLayout title="Pilih Lokasi Pesanan - VeloCity Express">
+  <CommonHeader client:load />
+  
+  <main class="flex-1 min-h-[calc(100vh-128px)]">
+    <LocationPicker client:load />
+  </main>
+  
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

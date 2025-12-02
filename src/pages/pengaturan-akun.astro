@@ -1,0 +1,15 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import AccountSettingsPage from '@/components/pengaturan-akun/AccountSettingsPage.tsx'
+---
+
+<BaseLayout title="Pengaturan Akun - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <main className="flex-1">
+    <AccountSettingsPage client:load />
+  </main>
+  <CommonFooter client:load variant="simple" />
+</BaseLayout>

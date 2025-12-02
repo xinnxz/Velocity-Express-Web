@@ -1,0 +1,15 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import DetailPelacakanAkunPage from '@/components/detail-pelacakan-akun/DetailPelacakanAkunPage.tsx'
+---
+
+<BaseLayout title="Detail Pelacakan Akun - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <main className="flex-1">
+    <DetailPelacakanAkunPage client:idle />
+  </main>
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

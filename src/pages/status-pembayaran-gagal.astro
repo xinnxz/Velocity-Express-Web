@@ -1,0 +1,17 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import PaymentFailureContent from '@/components/status-pembayaran-gagal/PaymentFailureContent.tsx'
+---
+
+<BaseLayout title="Pembayaran Gagal - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  
+  <main className="flex-1 min-h-[calc(100vh-128px)]">
+    <PaymentFailureContent client:load />
+  </main>
+  
+  <CommonFooter variant="simple" />
+</BaseLayout>

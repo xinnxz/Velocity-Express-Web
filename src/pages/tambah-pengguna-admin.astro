@@ -1,0 +1,33 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import AppSidebarLayout from '@/components/common/AppSidebarLayout.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import AddUserForm from '@/components/tambah-pengguna-admin/AddUserForm.tsx'
+---
+
+<BaseLayout title="Tambah Pengguna Admin - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <AppSidebarLayout client:load headerHeight="64px">
+    <main className="flex-1 flex flex-col">
+      <div className="flex-1 container-custom py-8">
+        <div className="max-w-2xl mx-auto">
+          {/* Page Header */}
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold mb-2">Tambah Pengguna Baru</h1>
+            <p className="text-muted-foreground">
+              Buat akun pengguna baru dengan mengisi informasi dasar di bawah ini
+            </p>
+          </div>
+
+          {/* Form Container */}
+          <div className="glass-effect rounded-lg p-6 border border-border">
+            <AddUserForm client:load />
+          </div>
+        </div>
+      </div>
+      <CommonFooter variant="simple" />
+    </main>
+  </AppSidebarLayout>
+</BaseLayout>

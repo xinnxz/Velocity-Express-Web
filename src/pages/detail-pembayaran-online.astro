@@ -1,0 +1,28 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import PaymentFormCard from '@/components/detail-pembayaran-online/PaymentFormCard.tsx'
+---
+
+<BaseLayout title="Detail Pembayaran Online - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  
+  <main className="flex-1 min-h-[calc(100vh-64px)] bg-gradient-dark">
+    <div className="container-custom py-8 md:py-12">
+      {/* Page Header */}
+      <div className="mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold mb-2">Pembayaran Online</h1>
+        <p className="text-muted-foreground">
+          Masukkan detail kartu kredit/debit Anda untuk menyelesaikan pembayaran
+        </p>
+      </div>
+
+      {/* Payment Form */}
+      <PaymentFormCard client:load />
+    </div>
+  </main>
+
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

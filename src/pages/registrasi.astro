@@ -1,0 +1,19 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import RegistrationForm from '@/components/registrasi/RegistrationForm.tsx'
+---
+
+<BaseLayout title="Registrasi Akun - VeloCity Express">
+  <CommonHeader client:load variant="transparent" isAuthenticated={false} />
+  
+  <main className="flex-1 flex items-center justify-center min-h-[calc(100vh-64px)] py-12 px-4">
+    <div className="w-full max-w-md">
+      <RegistrationForm client:load />
+    </div>
+  </main>
+  
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

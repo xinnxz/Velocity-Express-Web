@@ -1,0 +1,101 @@
+
+/* Analytics page specific styles */
+
+@layer components {
+  /* Chart container styling */
+  .chart-container {
+    @apply rounded-lg border border-border/50 bg-card/30 p-6;
+  }
+
+  /* Metric card hover effect */
+  .metric-card {
+    @apply transition-all duration-300;
+  }
+
+  .metric-card:hover {
+    @apply border-primary/50 shadow-card;
+  }
+
+  /* Report card styling */
+  .report-card {
+    @apply glass-effect border-border/50 rounded-lg p-6 transition-all duration-300;
+  }
+
+  .report-card:hover {
+    @apply border-primary/50 shadow-card;
+  }
+
+  /* Chart tooltip styling */
+  .recharts-tooltip {
+    @apply rounded-lg border border-border bg-card/95 backdrop-blur-sm;
+  }
+
+  /* Analytics header styling */
+  .analytics-header {
+    @apply sticky top-16 z-40 bg-background/80 backdrop-blur-md border-b border-border;
+  }
+
+  /* Metric value animation */
+  @keyframes metric-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .metric-value {
+    @apply animate-metric-pulse;
+  }
+
+  /* Trend indicator styling */
+  .trend-up {
+    @apply text-green-400;
+  }
+
+  .trend-down {
+    @apply text-red-400;
+  }
+
+  /* Filter button active state */
+  .filter-btn-active {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+
+  /* Report list grid responsive */
+  @media (max-width: 768px) {
+    .reports-grid {
+      @apply grid-cols-1;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .reports-grid {
+      @apply grid-cols-2;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .reports-grid {
+      @apply grid-cols-2;
+    }
+  }
+}
+
+@layer utilities {
+  /* Utility for chart background */
+  .chart-bg {
+    @apply bg-gradient-to-br from-card/50 to-card/30;
+  }
+
+  /* Utility for metric highlight */
+  .metric-highlight {
+    @apply bg-primary/10 border border-primary/20 rounded-lg p-3;
+  }
+
+  /* Utility for data visualization */
+  .data-viz-container {
+    @apply w-full h-80 rounded-lg border border-border/50 bg-card/30 p-4;
+  }
+}

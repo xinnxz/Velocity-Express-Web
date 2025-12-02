@@ -1,0 +1,15 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import OrderHistoryPage from '@/components/riwayat-pesanan/OrderHistoryPage.tsx'
+---
+
+<BaseLayout title="Riwayat Pesanan - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <main className="flex-1">
+    <OrderHistoryPage client:load />
+  </main>
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

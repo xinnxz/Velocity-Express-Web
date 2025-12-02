@@ -1,0 +1,45 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import AppSidebarLayout from '@/components/common/AppSidebarLayout.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import ShipmentDetailsHeader from '@/components/detail-pengiriman-admin/ShipmentDetailsHeader.tsx'
+import ShipmentInfoCard from '@/components/detail-pengiriman-admin/ShipmentInfoCard.tsx'
+import ShipmentStatusTimeline from '@/components/detail-pengiriman-admin/ShipmentStatusTimeline.tsx'
+import ShipmentNotesSection from '@/components/detail-pengiriman-admin/ShipmentNotesSection.tsx'
+import ShipmentActionsPanel from '@/components/detail-pengiriman-admin/ShipmentActionsPanel.tsx'
+---
+
+<BaseLayout title="Detail Pengiriman Admin - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <AppSidebarLayout client:load headerHeight="64px">
+    <main className="flex-1 overflow-auto">
+      <div className="container-custom py-8 space-y-6">
+        {/* Header Section */}
+        <ShipmentDetailsHeader client:idle />
+        
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Left Column - Main Details */}
+          <div className="lg:col-span-2 space-y-6">
+            {/* Shipment Info */}
+            <ShipmentInfoCard client:idle />
+            
+            {/* Status Timeline */}
+            <ShipmentStatusTimeline client:idle />
+            
+            {/* Notes Section */}
+            <ShipmentNotesSection client:idle />
+          </div>
+          
+          {/* Right Column - Actions */}
+          <div>
+            <ShipmentActionsPanel client:idle />
+          </div>
+        </div>
+      </div>
+    </main>
+    <CommonFooter variant="simple" />
+  </AppSidebarLayout>
+</BaseLayout>

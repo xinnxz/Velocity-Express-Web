@@ -1,0 +1,17 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import LoginContainer from '@/components/login/LoginContainer.tsx'
+---
+
+<BaseLayout title="Login - VeloCity Express">
+  <CommonHeader client:load variant="transparent" isAuthenticated={false} />
+  
+<main className="flex-1 flex items-center justify-center min-h-[calc(100vh-64px)] py-12 px-4" id="igt6q">
+    <LoginContainer client:load id="im3r5" />
+  </main>
+  
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

@@ -1,0 +1,31 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+---
+
+<BaseLayout title="Halaman Dalam Pembangunan - VeloCity Express">
+  <div class="min-h-screen flex items-center justify-center p-4">
+    <Card className="max-w-md w-full glass-effect">
+      <CardHeader>
+        <CardTitle className="text-2xl gradient-text">Halaman Dalam Pembangunan</CardTitle>
+        <CardDescription>Halaman ini sedang dalam proses pengembangan</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <p class="text-muted-foreground">
+          Kami sedang bekerja keras untuk menghadirkan fitur terbaik untuk Anda. 
+          Halaman ini akan segera tersedia.
+        </p>
+        <div class="flex justify-center">
+          <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+        </div>
+        <a 
+          href="./index.html" 
+          class="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors"
+        >
+          Kembali ke Beranda
+        </a>
+      </CardContent>
+    </Card>
+  </div>
+</BaseLayout>

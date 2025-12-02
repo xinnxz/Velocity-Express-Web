@@ -1,0 +1,17 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import OtpVerificationForm from '@/components/verifikasi-otp/OtpVerificationForm.tsx'
+---
+
+<BaseLayout title="Verifikasi OTP - VeloCity Express">
+<CommonHeader client:load id="ia2o" />
+  
+  <main className="flex-1 flex items-center justify-center min-h-[calc(100vh-64px)] py-8 px-4" id="ih1qd">
+    <OtpVerificationForm client:load id="iznbf" />
+  </main>
+  
+  <CommonFooter client:load variant="simple" />
+</BaseLayout>

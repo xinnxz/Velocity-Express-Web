@@ -1,0 +1,33 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import TrackingHistoryHeader from '@/components/detail-riwayat-pelacakan/TrackingHistoryHeader.tsx'
+import TrackingHistoryTimeline from '@/components/detail-riwayat-pelacakan/TrackingHistoryTimeline.tsx'
+import PackageInfoCard from '@/components/detail-riwayat-pelacakan/PackageInfoCard.tsx'
+---
+
+<BaseLayout title="Detail Riwayat Pelacakan - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  
+  <main className="flex-1 bg-gradient-dark min-h-[calc(100vh-64px)] flex flex-col">
+    <div className="container-custom py-6 sm:py-8 flex-1">
+      <TrackingHistoryHeader client:load />
+      
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 mt-6 sm:mt-8">
+        {/* Timeline Column */}
+        <div className="lg:col-span-2 space-y-5 sm:space-y-6">
+          <TrackingHistoryTimeline client:idle />
+        </div>
+        
+        {/* Package Info Column */}
+        <div className="lg:col-span-1">
+          <PackageInfoCard client:idle />
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <CommonFooter client:load variant="simple" />
+</BaseLayout>

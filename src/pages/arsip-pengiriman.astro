@@ -1,0 +1,15 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import ArchiveShipmentPage from '@/components/arsip-pengiriman/ArchiveShipmentPage.tsx'
+---
+
+<BaseLayout title="Arsip Pengiriman - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <main className="flex-1 bg-gradient-dark">
+    <ArchiveShipmentPage client:load />
+  </main>
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

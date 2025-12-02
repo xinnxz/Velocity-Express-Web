@@ -1,0 +1,23 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import HeroSection from '@/components/buat-pesanan-awal/HeroSection.tsx'
+import FeaturesSection from '@/components/buat-pesanan-awal/FeaturesSection.tsx'
+import PromosSection from '@/components/buat-pesanan-awal/PromosSection.tsx'
+import CTASection from '@/components/buat-pesanan-awal/CTASection.tsx'
+---
+
+<BaseLayout title="Buat Pesanan Baru - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={false} />
+  
+  <main className="flex-1">
+    <HeroSection client:idle />
+    <FeaturesSection client:idle />
+    <PromosSection client:idle />
+    <CTASection client:idle />
+  </main>
+  
+  <CommonFooter client:load variant="complex" />
+</BaseLayout>

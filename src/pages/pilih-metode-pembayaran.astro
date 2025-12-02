@@ -1,0 +1,17 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import PaymentMethodPage from '@/components/pilih-metode-pembayaran/PaymentMethodPage.tsx'
+---
+
+<BaseLayout title="Pilih Metode Pembayaran - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  
+  <main className="flex-1 bg-gradient-dark">
+    <PaymentMethodPage client:load />
+  </main>
+  
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

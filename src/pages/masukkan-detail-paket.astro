@@ -1,0 +1,17 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import PackageDetailForm from '@/components/masukkan-detail-paket/PackageDetailForm.tsx'
+---
+
+<BaseLayout title="Masukkan Detail Paket - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  
+  <main class="flex-1 min-h-[calc(100vh-128px)]">
+    <PackageDetailForm client:load />
+  </main>
+  
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

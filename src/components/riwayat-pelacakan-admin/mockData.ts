@@ -1,0 +1,143 @@
+
+export interface TrackingEvent {
+  timestamp: string
+  eventType: 'pickup' | 'transit' | 'location_update' | 'delivery_attempt' | 'delivered' | 'failed' | 'note'
+  status: 'pending' | 'picked_up' | 'in_transit' | 'out_for_delivery' | 'delivered' | 'failed'
+  statusLabel: string
+  description: string
+  location: string
+  coordinates?: string
+  handler?: string
+  temperature?: string
+  notes?: string
+}
+
+export const mockTrackingHistory: TrackingEvent[] = [
+  {
+    timestamp: '2024-01-15 08:30:00',
+    eventType: 'pickup',
+    status: 'picked_up',
+    statusLabel: 'Dijemput',
+    description: 'Paket dijemput dari pengirim',
+    location: 'Jakarta Pusat - Kantor Pengirim',
+    coordinates: '-6.2088, 106.8456',
+    handler: 'Kurir Budi Santoso',
+    notes: 'Paket dalam kondisi baik, dikemas dengan rapi',
+  },
+  {
+    timestamp: '2024-01-15 09:15:00',
+    eventType: 'location_update',
+    status: 'in_transit',
+    statusLabel: 'Dalam Perjalanan',
+    description: 'Paket tiba di pusat distribusi',
+    location: 'Jakarta Pusat - Hub Distribusi Utama',
+    coordinates: '-6.1753, 106.8249',
+    handler: 'Sistem Otomatis',
+    temperature: '25°C',
+    notes: 'Paket discan dan diverifikasi',
+  },
+  {
+    timestamp: '2024-01-15 11:45:00',
+    eventType: 'transit',
+    status: 'in_transit',
+    statusLabel: 'Dalam Perjalanan',
+    description: 'Paket dimuat ke kendaraan pengiriman',
+    location: 'Jakarta Pusat - Hub Distribusi Utama',
+    coordinates: '-6.1753, 106.8249',
+    handler: 'Tim Logistik',
+    notes: 'Paket dimuat ke truk VEL-001 untuk rute Surabaya',
+  },
+  {
+    timestamp: '2024-01-15 14:20:00',
+    eventType: 'location_update',
+    status: 'in_transit',
+    statusLabel: 'Dalam Perjalanan',
+    description: 'Paket meninggalkan Jakarta',
+    location: 'Bekasi - Gerbang Tol Bekasi',
+    coordinates: '-6.2349, 107.0149',
+    handler: 'Sistem GPS',
+    temperature: '26°C',
+    notes: 'Kendaraan memasuki jalur tol menuju Surabaya',
+  },
+  {
+    timestamp: '2024-01-15 18:30:00',
+    eventType: 'location_update',
+    status: 'in_transit',
+    statusLabel: 'Dalam Perjalanan',
+    description: 'Paket dalam perjalanan',
+    location: 'Cirebon - Area Istirahat',
+    coordinates: '-6.7049, 108.4774',
+    handler: 'Sistem GPS',
+    temperature: '24°C',
+    notes: 'Kendaraan berhenti untuk istirahat pengemudi',
+  },
+  {
+    timestamp: '2024-01-16 02:15:00',
+    eventType: 'location_update',
+    status: 'in_transit',
+    statusLabel: 'Dalam Perjalanan',
+    description: 'Paket dalam perjalanan malam',
+    location: 'Semarang - Area Pelabuhan',
+    coordinates: '-6.9271, 110.4268',
+    handler: 'Sistem GPS',
+    temperature: '23°C',
+    notes: 'Perjalanan malam berjalan lancar',
+  },
+  {
+    timestamp: '2024-01-16 08:45:00',
+    eventType: 'location_update',
+    status: 'in_transit',
+    statusLabel: 'Dalam Perjalanan',
+    description: 'Paket tiba di hub regional Surabaya',
+    location: 'Surabaya - Hub Distribusi Regional',
+    coordinates: '-7.2575, 112.7521',
+    handler: 'Sistem Otomatis',
+    temperature: '27°C',
+    notes: 'Paket discan dan diverifikasi di hub regional',
+  },
+  {
+    timestamp: '2024-01-16 10:30:00',
+    eventType: 'location_update',
+    status: 'out_for_delivery',
+    statusLabel: 'Sedang Dikirim',
+    description: 'Paket dimuat untuk pengiriman final',
+    location: 'Surabaya - Hub Distribusi Regional',
+    coordinates: '-7.2575, 112.7521',
+    handler: 'Kurir Adi Wijaya',
+    notes: 'Paket dimuat ke motor kurir untuk pengiriman ke toko penerima',
+  },
+  {
+    timestamp: '2024-01-16 12:00:00',
+    eventType: 'delivery_attempt',
+    status: 'out_for_delivery',
+    statusLabel: 'Sedang Dikirim',
+    description: 'Kurir dalam perjalanan ke lokasi penerima',
+    location: 'Surabaya - Jalan Pemuda',
+    coordinates: '-7.2505, 112.7381',
+    handler: 'Kurir Adi Wijaya',
+    temperature: '28°C',
+    notes: 'Kurir sedang dalam perjalanan, estimasi tiba 15 menit',
+  },
+  {
+    timestamp: '2024-01-16 13:45:00',
+    eventType: 'delivered',
+    status: 'delivered',
+    statusLabel: 'Terkirim',
+    description: 'Paket berhasil diterima',
+    location: 'Surabaya - Toko Elektronik Merdeka',
+    coordinates: '-7.2489, 112.7381',
+    handler: 'Budi Santoso (Penerima)',
+    notes: 'Paket diterima dalam kondisi baik, ditandatangani oleh penerima',
+  },
+  {
+    timestamp: '2024-01-16 14:00:00',
+    eventType: 'note',
+    status: 'delivered',
+    statusLabel: 'Terkirim',
+    description: 'Konfirmasi pengiriman',
+    location: 'Surabaya - Toko Elektronik Merdeka',
+    coordinates: '-7.2489, 112.7381',
+    handler: 'Sistem Otomatis',
+    notes: 'Foto bukti pengiriman telah diupload dan diverifikasi',
+  },
+]

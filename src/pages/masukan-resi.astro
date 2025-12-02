@@ -1,0 +1,16 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import TrackingNumberForm from '@/components/masukan-resi/TrackingNumberForm.tsx'
+---
+
+<BaseLayout title="Lacak Paket - VeloCity Express">
+  <CommonHeader client:load />
+  
+  <main className="flex-1 min-h-[calc(100vh-64px)] flex flex-col">
+    <TrackingNumberForm client:load />
+    <CommonFooter client:idle variant="simple" />
+  </main>
+</BaseLayout>

@@ -1,0 +1,16 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import AppSidebarLayout from '@/components/common/AppSidebarLayout.tsx'
+import TariffEditorPage from '@/components/editor-tarif-layanan/TariffEditorPage.tsx'
+---
+
+<BaseLayout title="Editor Tarif Layanan - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <AppSidebarLayout client:load headerHeight="64px">
+    <main class="flex-1 overflow-auto">
+      <TariffEditorPage client:load />
+    </main>
+  </AppSidebarLayout>
+</BaseLayout>

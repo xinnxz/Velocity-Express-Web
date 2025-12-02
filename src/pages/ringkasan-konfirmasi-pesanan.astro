@@ -1,0 +1,15 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import OrderSummaryPage from '@/components/ringkasan-konfirmasi-pesanan/OrderSummaryPage.tsx'
+---
+
+<BaseLayout title="Ringkasan & Konfirmasi Pesanan - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <main class="flex-1">
+    <OrderSummaryPage client:load />
+  </main>
+  <CommonFooter client:load variant="simple" />
+</BaseLayout>

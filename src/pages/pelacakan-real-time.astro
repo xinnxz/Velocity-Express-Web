@@ -1,0 +1,15 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import TrackingPageContent from '@/components/pelacakan-real-time/TrackingPageContent.tsx'
+---
+
+<BaseLayout title="Pelacakan Real-time - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <main className="flex-1">
+    <TrackingPageContent client:load />
+  </main>
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

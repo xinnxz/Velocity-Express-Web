@@ -1,0 +1,29 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import HeroSection from '@/components/beranda/HeroSection.tsx'
+import QuickAccessCards from '@/components/beranda/QuickAccessCards.tsx'
+import PromoSection from '@/components/beranda/PromoSection.tsx'
+import FeaturedServices from '@/components/beranda/FeaturedServices.tsx'
+import StatsSection from '@/components/beranda/StatsSection.tsx'
+import TestimonialsSection from '@/components/beranda/TestimonialsSection.tsx'
+import NewsletterSection from '@/components/beranda/NewsletterSection.tsx'
+---
+
+<BaseLayout title="Beranda - VeloCity Express | Kurir Enterprise Futuristik">
+  <CommonHeader client:load isAuthenticated={false} variant="transparent" />
+  
+  <main className="flex-1">
+    <HeroSection client:idle />
+    <QuickAccessCards client:idle />
+    <PromoSection client:idle />
+    <FeaturedServices client:idle />
+    <StatsSection client:idle />
+    <TestimonialsSection client:idle />
+    <NewsletterSection client:idle />
+  </main>
+
+  <CommonFooter client:idle variant="complex" />
+</BaseLayout>

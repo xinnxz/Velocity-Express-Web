@@ -1,0 +1,16 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import AppSidebarLayout from '@/components/common/AppSidebarLayout.tsx'
+import TrackingHistoryContent from '@/components/riwayat-pelacakan-admin/TrackingHistoryContent.tsx'
+---
+
+<BaseLayout title="Riwayat Pelacakan Admin - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <AppSidebarLayout client:load headerHeight="64px">
+    <main class="flex-1 flex flex-col">
+      <TrackingHistoryContent client:idle />
+    </main>
+  </AppSidebarLayout>
+</BaseLayout>

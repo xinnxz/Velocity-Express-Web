@@ -1,0 +1,19 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import SetPasswordForm from '@/components/atur-kata-sandi/SetPasswordForm.tsx'
+---
+
+<BaseLayout title="Atur Kata Sandi - VeloCity Express">
+  <CommonHeader client:load variant="transparent" />
+  
+<main className="flex-1 flex items-center justify-center min-h-[calc(100vh-64px)] py-8 px-4" id="ij80t">
+<div className="w-full max-w-md" id="imj54" style={{ margin: '40px 0px 30px 0px', maxWidth: '500px' }}>
+      <SetPasswordForm client:load />
+    </div>
+  </main>
+
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

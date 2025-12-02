@@ -1,0 +1,18 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import AppSidebarLayout from '@/components/common/AppSidebarLayout.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import ShipmentListPage from '@/components/daftar-pengiriman-saya/ShipmentListPage.tsx'
+---
+
+<BaseLayout title="Daftar Pengiriman Saya - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <AppSidebarLayout client:load headerHeight="64px">
+    <main class="flex-1 flex flex-col">
+      <ShipmentListPage client:idle />
+      <CommonFooter variant="simple" />
+    </main>
+  </AppSidebarLayout>
+</BaseLayout>

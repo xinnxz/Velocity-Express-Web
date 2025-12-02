@@ -1,0 +1,17 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import AddressManagementPage from '@/components/manajemen-alamat/AddressManagementPage.tsx'
+---
+
+<BaseLayout title="Manajemen Alamat - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  
+  <main className="flex-1">
+    <AddressManagementPage client:load />
+  </main>
+  
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>

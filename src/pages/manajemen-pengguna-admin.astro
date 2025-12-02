@@ -1,0 +1,16 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import AppSidebarLayout from '@/components/common/AppSidebarLayout.tsx'
+import UserManagementPage from '@/components/manajemen-pengguna-admin/UserManagementPage.tsx'
+---
+
+<BaseLayout title="Manajemen Pengguna Admin - VeloCity Express">
+  <CommonHeader client:load isAuthenticated={true} />
+  <AppSidebarLayout client:load headerHeight="64px">
+    <main className="flex-1 overflow-auto">
+      <UserManagementPage client:idle />
+    </main>
+  </AppSidebarLayout>
+</BaseLayout>
